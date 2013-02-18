@@ -18,5 +18,6 @@ $db = new PDO('mysql:host=localhost;dbname=test', 'root', 'chiennes');
 $manager = new PersonnageManager($db);
 
 
+
 include("includes/bas.php");
 ?>

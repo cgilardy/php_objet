@@ -24,10 +24,19 @@ class PersonnageManager {
 	}
 
 	public function get($id){
-
+		$q = $this->_db->query("SELECT * FROM personnages WHERE id=".$id) or die(print_r($q->errorInfo()));	
+		$donnees = $q->fetch(PDO::FETCH_ASSOC);
+		
+		return new Personnage($donnees);
 	}
 
 	public function getList(){
+		$q = $this->_db->query("SELECT * FROM personnages ORDER BY nom");
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+			$perso[] = new Personnage($donnees);
+		}
+
+		return $perso;
 
 	}
 
