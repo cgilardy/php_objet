@@ -14,7 +14,7 @@ class PersonnageManager {
 	}
 
 	public function update(Personnage $p){
-		$q = $this->_db->prepare("UPDATE personnages SET nom=:nom,vie=:vie,forcee=:forcee");
+		$q = $this->_db->prepare("UPDATE personnages SET nom=:nom,vie=:vie,forcee=:forcee WHERE id=."$p->getId());
 		$q->execute(array('nom'=>$p->getNom(), 'vie'=>$p->getVie(), 'forcee'=>$p->getForce())) or die(print_r($q->errorInfo()));	
 		echo "Le personnage à bien été modifier";
 	}

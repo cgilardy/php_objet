@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">	
-	<title>Jeux</title>
+	<title>membres</title>
 </head>
 
 <body>
